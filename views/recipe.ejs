@@ -1,0 +1,27 @@
+<nav aria-label="breadcrumb" class="mt-4">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Library</li>
+  </ol>
+ </nav>
+
+ <% if( recipeDetails !== null) { %>
+  <div class="row pt4 ">
+    <div class="col-12 col-md-4 d-flex  d-md-block justify-content-center ">
+      <img src="/uploads/<%= recipeDetails.image %>" alt="<%= recipeDetails.name %>"  style=" border-radius: 20px ; top:20px;" class="img-fluid sticky-top" >
+    </div>
+    <div class="col-md-8 col-12 row">
+      <h1 class="col-12 text-center text-md-start p-3 p-md-0"><%= recipeDetails.name %></h1>
+      <div><i class="bi bi-tag col-12"></i>  <%= recipeDetails.category %></div>
+      <h3 class="display-5 col-12"> Cocking instruction</h3>
+      <p class="lead col-12"><%= recipeDetails.description %></p>
+
+      <h3 class="display-5 col-12">Ingrediants :</h3>
+      <ul class="list-group list-group-flush col-12 row">
+        <% recipeDetails.ingredients.forEach(function(ingredients, index){ %>
+          <li class="list-group-item col-12"><%= ingredients %></li>
+        <% }) %>
+      </ul>
+    </div>
+  </div>
+ <% } %>

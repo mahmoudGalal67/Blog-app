@@ -1,0 +1,23 @@
+<h1 class="pb-4">Recipes</h1>
+
+<nav aria-label="breadcrumb">
+ <ol class="breadcrumb">
+   <li class="breadcrumb-item"><a href="/">Home</a></li>
+   <li class="breadcrumb-item"><a href="/categories">categories</a></li>
+   <li class="breadcrumb-item active" aria-current="page">Library</li>
+ </ol>
+</nav>
+
+<div class="row row-cols-2 cat-sec row-cols-lg-3">
+  <% if(recipies !=""){ %>
+    <% recipies.forEach((rec)=>{ %>
+      <a href="#" class="col text-center act-link text-decoration-none ">
+        <img src="/uploads/<%- rec.image %>"  class="img-cat" alt="">
+        <p class="p-cat"><%- rec.name %></p>
+      </a>
+    <% }) %>
+  <% }else{ %>
+      <p>No items was found</p>
+  <%} %>
+  </a>
+</div>

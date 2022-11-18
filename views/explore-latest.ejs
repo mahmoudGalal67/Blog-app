@@ -1,0 +1,15 @@
+<section class="pb-4 pt-4">
+  <h1>Latest Recipes</h1>
+  <div class="row row-cols-2 recipe-sec row-cols-lg-5 g-2 g-lg-3">
+    <% if(latestRecipe != '') { %>
+      <% latestRecipe.forEach(function(recipe, index){ %>
+        <a href="/recipe/<%- recipe._id %>" class="col text-center cat-link ">
+          <img src="uploads/<%- recipe.image %>"  class="img-cat" alt="<%- recipe.name %>">
+          <p class="p-cat"><%- recipe.name %></p>
+        </a>
+      <% }) %>
+    <% } else { %>
+      <p>No items found.</p>
+    <% } %>
+  </div>
+</section>
